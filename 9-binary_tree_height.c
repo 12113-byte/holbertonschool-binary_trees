@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include "binary_trees.h"
 
+/**
+ * my_max - gets the bigger value
+ * @value_one: value one
+ * @value_two: value two
+ * Return: the bigger value
+ */
+
 int my_max(int value_one, int value_two)
 {
 	if (value_one > value_two)
@@ -26,11 +33,15 @@ size_t binary_tree_height(const binary_tree_t *tree)
 
 	if (tree == NULL)
 	{
-		return (-1);
+		return (0);
 	}
+	if (tree->right == NULL && tree->left == NULL)
+	{
+		return (0);
+	}
+
 	left_height = binary_tree_height(tree->left);
 	right_height = binary_tree_height(tree->right);
-
-	return ((my_max(right_height, left_height)) + 1);
+	return (my_max(right_height, left_height) + 1);
 }
 
