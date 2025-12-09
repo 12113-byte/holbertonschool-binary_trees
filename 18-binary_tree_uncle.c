@@ -14,14 +14,13 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 	{
 		return (NULL);
 	}
-	if (node == node->parent->right || node == node->parent->left)
-	{
-		return (node->parent->parent->right);
-	}
-	else
+	if (node->parent == node->parent->parent->right)
 	{
 		return (node->parent->parent->left);
 	}
-	return (NULL);
+	else
+	{
+		return (node->parent->parent->right);
+	}
 }
 
