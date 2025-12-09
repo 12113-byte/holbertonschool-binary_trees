@@ -73,7 +73,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	right_side = binary_tree_height(tree->right);
 	left_perfect = binary_tree_is_perfect(tree->left);
 	right_perfect = binary_tree_is_perfect(tree->right);
-	equal_height = left_height == right_height;
+	equal_height = left_side == right_side;
 
 	if (left_perfect && right_perfect && equal_height)
 	{
